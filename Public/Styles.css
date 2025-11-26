@@ -106,7 +106,7 @@ nav {
 .hero {
     height: 100vh;
     min-height: 600px;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/Assets/images/Fondo.png');
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('Assets/images/Fondo.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -393,7 +393,7 @@ nav {
 /* WHO IS SECTION */
 /* WHO IS SECTION */
 .who-is {
-    background: url('/Assets/images/bg_whoIs.png');
+    background: url('Assets/images/bg_whoIs.png');
     background-size: cover;
     background-position: center;
     padding: 236px 40px;
@@ -534,7 +534,7 @@ nav {
 
 /* CONTACT SECTION */
 .contact {
-    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('/Assets/images/bg_contact.png');
+    background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('Assets/images/bg_contact.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
