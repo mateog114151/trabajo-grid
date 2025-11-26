@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -8,17 +9,19 @@ body {
     font-family: 'Arial', sans-serif;
     color: #333;
     overflow-x: hidden;
+    font-size: 16px;
 }
 
 /* HEADER */
 header {
-    background-color: #3d4f5c;
-    padding: 20px 0;
+    background-color: rgba(61, 79, 92, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 48px 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
 nav {
@@ -31,19 +34,19 @@ nav {
 }
 
 .logo {
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
-    color: #5dade2;
-    letter-spacing: 2px;
+    color: #fff;
+    letter-spacing: 3px;
 }
 
-.logo span {
-    color: #fff;
+.logo .blue {
+    color: #5dade2;
 }
 
 .nav-links {
     display: flex;
-    gap: 35px;
+    gap: 30px;
     list-style: none;
 }
 
@@ -52,17 +55,38 @@ nav {
     text-decoration: none;
     text-transform: uppercase;
     font-size: 11px;
-    letter-spacing: 1.5px;
-    font-weight: 400;
-    transition: color 0.3s;
+    letter-spacing: 1.2px;
+    font-weight: 500;
+    transition: all 0.3s;
+    padding: 8px 0;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: transparent;
+    transition: background-color 0.3s;
 }
 
 .nav-links a:hover {
     color: #5dade2;
 }
 
+.nav-links a:hover::after {
+    background-color: #5dade2;
+}
+
 .nav-links a.active {
     color: #5dade2;
+}
+
+.nav-links a.active::after {
+    background-color: #5dade2;
 }
 
 .menu-toggle {
@@ -92,7 +116,7 @@ nav {
     align-items: center;
     text-align: center;
     color: #fff;
-    margin-top: 64px;
+    margin-top: 68px;
 }
 
 .hero-text {
@@ -103,7 +127,7 @@ nav {
 }
 
 .hero-text h1 {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 300;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -130,24 +154,23 @@ nav {
 }
 
 .service-icon {
-    width: 70px;
-    height: 70px;
+    width: auto;
+    height: auto;
     margin: 0 auto 25px;
-    background-color: rgba(255,255,255,0.15);
+    background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 3px;
 }
 
 .service-icon img {
-    width: 35px;
-    height: 35px;
+    width: 60px;
+    height: 60px;
     object-fit: contain;
 }
 
 .service-item h3 {
-    font-size: 14px;
+    font-size: 16px;
     text-transform: uppercase;
     letter-spacing: 2.5px;
     margin-bottom: 18px;
@@ -155,7 +178,7 @@ nav {
 }
 
 .service-item p {
-    font-size: 12px;
+    font-size: 14px;
     line-height: 1.7;
     opacity: 0.95;
     font-weight: 300;
@@ -173,7 +196,7 @@ nav {
 }
 
 .portfolio h2 {
-    font-size: 22px;
+    font-size: 26px;
     text-transform: uppercase;
     letter-spacing: 4px;
     color: #b8b8b8;
@@ -193,7 +216,7 @@ nav {
     border: none;
     color: #999;
     text-transform: uppercase;
-    font-size: 10px;
+    font-size: 12px;
     letter-spacing: 1.5px;
     cursor: pointer;
     padding: 8px 12px;
@@ -246,7 +269,7 @@ nav {
 }
 
 .default-content h2 {
-    font-size: 18px;
+    font-size: 22px;
     text-transform: uppercase;
     letter-spacing: 3px;
     color: #fff;
@@ -258,7 +281,7 @@ nav {
     color: #ccc;
     line-height: 1.9;
     margin-bottom: 18px;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 300;
 }
 
@@ -270,7 +293,7 @@ nav {
     color: #5dade2;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 10px;
+    font-size: 11px;
     letter-spacing: 1.5px;
     transition: all 0.3s;
 }
@@ -294,56 +317,86 @@ nav {
     height: 100%;
     object-fit: cover;
 }
-
 /* TWITTER SECTION */
 .twitter {
     background-color: #5dade2;
     padding: 70px 40px;
-    text-align: center;
     position: relative;
 }
 
 .twitter-icon {
     position: absolute;
-    top: 30px;
-    right: 50px;
-    color: rgba(255,255,255,0.3);
-    font-size: 24px;
+    top: 35px;
+    right: 60px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.twitter-icon img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    opacity: 0.4;
 }
 
 .twitter h2 {
-    font-size: 18px;
+    font-size: 22px;
     text-transform: uppercase;
     letter-spacing: 4px;
     color: #fff;
-    margin-bottom: 35px;
-    font-weight: 300;
+    margin-bottom: 15px;
+    font-weight: 400;
+    text-align: left;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: inline-block;
+}
+
+
+.twitter h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+    background-color: #fff;
+}
+
+.twitter-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+    margin-top: 35px;
 }
 
 .tweet {
-    max-width: 750px;
-    margin: 0 auto;
+    max-width: 900px;
     color: #fff;
-    font-size: 13px;
-    line-height: 1.9;
+    font-size: 22px;
+    line-height: 1.6;
     font-weight: 300;
 }
-
 .tweet-handle {
     color: #fff;
     font-weight: 600;
     margin-top: 20px;
-    display: block;
-    font-size: 13px;
+    display: inline-block;
+    font-size: 22px;
 }
 
 /* WHO IS SECTION */
+/* WHO IS SECTION */
 .who-is {
-    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url('/Assets/images/bg_whoIs.png');
+    background: url('/Assets/images/bg_whoIs.png');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
-    padding: 110px 40px;
+    padding: 236px 40px;
     color: #fff;
 }
 
@@ -353,53 +406,72 @@ nav {
 }
 
 .who-is h2 {
-    font-size: 18px;
+    font-size: 22px;
     text-transform: uppercase;
     letter-spacing: 3px;
-    margin-bottom: 40px;
-    font-weight: 300;
+    margin-bottom: 15px;
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+}
+
+
+.who-is h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #fff;
 }
 
 .who-is-content {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 80px;
-    align-items: start;
+    grid-template-columns: 1fr auto;
+    gap: 100px;
+    align-items: flex-start;
+    margin-top: 40px;
+}
+
+.who-is-text {
+    max-width: 900px;
 }
 
 .who-is-text p {
-    line-height: 1.9;
-    margin-bottom: 22px;
-    font-size: 12px;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 14px;
     color: #ddd;
     font-weight: 300;
 }
 
 .social-icons {
     display: flex;
-    gap: 18px;
-    justify-content: center;
+    gap: 15px;
+    justify-content: flex-end;
+    align-items: flex-start;
 }
 
 .social-icon {
-    width: 48px;
-    height: 48px;
+    width: 50px;
+    height: 50px;
     border: 2px solid rgba(255,255,255,0.8);
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: all 0.3s;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 400;
+    background-color: transparent;
 }
 
 .social-icon:hover {
-    background-color: #5dade2;
-    border-color: #5dade2;
+    background-color: rgba(255,255,255,0.1);
+    border-color: #fff;
     transform: translateY(-3px);
 }
-
 /* TESTIMONIALS */
 .testimonials {
     background-color: #f5f5f5;
@@ -412,13 +484,14 @@ nav {
 }
 
 .testimonials h2 {
-    font-size: 22px;
+    font-size: 26px;
     text-transform: uppercase;
     letter-spacing: 4px;
     color: #b8b8b8;
     margin-bottom: 50px;
     font-weight: 300;
 }
+
 
 .testimonial-content {
     display: flex;
@@ -429,12 +502,11 @@ nav {
 
 .testimonial-text {
     flex: 1;
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.9;
     color: #666;
     font-weight: 300;
 }
-
 .quote-icon {
     font-size: 70px;
     color: #d0d0d0;
@@ -474,27 +546,56 @@ nav {
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 80px;
+    gap: 120px;
 }
 
 .contact h2 {
-    font-size: 22px;
+    font-size: 24px;
     text-transform: uppercase;
     letter-spacing: 4px;
     color: #fff;
-    margin-bottom: 45px;
-    font-weight: 300;
+    margin-bottom: 15px;
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+}
+
+.contact h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #fff;
+}
+
+.contact-form {
+    margin-top: 50px;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-label {
+    display: block;
+    color: #fff;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+    font-weight: 500;
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 16px 18px;
-    margin-bottom: 22px;
+    padding: 18px 20px;
     background: transparent;
-    border: 1px solid rgba(255,255,255,0.35);
+    border: 2px solid rgba(255,255,255,0.4);
     color: #fff;
-    font-size: 12px;
+    font-size: 14px;
     font-family: 'Arial', sans-serif;
     transition: border-color 0.3s;
 }
@@ -502,34 +603,35 @@ nav {
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: rgba(255,255,255,0.6);
+    border-color: rgba(255,255,255,0.7);
 }
 
 .contact-form input::placeholder,
 .contact-form textarea::placeholder {
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.4);
     text-transform: uppercase;
     font-size: 10px;
     letter-spacing: 1.5px;
 }
 
 .contact-form textarea {
-    height: 180px;
+    height: 200px;
     resize: none;
 }
 
 .submit-btn {
-    width: 100%;
-    padding: 16px;
+    width: 50%;
+    padding: 18px;
     background-color: #5dade2;
     border: none;
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 2.5px;
     cursor: pointer;
-    font-size: 11px;
+    font-size: 12px;
     font-weight: 600;
     transition: background-color 0.3s;
+    margin-top: 30px;
 }
 
 .submit-btn:hover {
@@ -542,8 +644,8 @@ nav {
 
 .contact-info > p {
     line-height: 1.9;
-    margin-bottom: 35px;
-    font-size: 12px;
+    margin-bottom: 40px;
+    font-size: 13px;
     font-weight: 300;
 }
 
@@ -552,55 +654,163 @@ nav {
 }
 
 .contact-details h3 {
-    font-size: 13px;
+    font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     font-weight: 600;
 }
 
 .contact-details p {
-    font-size: 12px;
-    line-height: 1.7;
-    margin-bottom: 12px;
+    font-size: 13px;
+    line-height: 1.8;
+    margin-bottom: 8px;
     font-weight: 300;
 }
-
 /* FOOTER */
 footer {
     background-color: #2c3e50;
-    padding: 25px 40px;
-    text-align: center;
+    padding: 35px 40px;
+    color: rgba(255,255,255,0.8);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.footer-links a {
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: rgba(255,255,255,0.9);
+}
+
+.footer-links span {
+    color: rgba(255,255,255,0.3);
+}
+
+.footer-copyright {
     color: rgba(255,255,255,0.7);
     font-size: 11px;
     letter-spacing: 0.5px;
 }
-
 /* MEDIA QUERIES */
+
+/* Large Tablets and Small Desktops (1200px - 1440px) */
+@media (max-width: 1440px) {
+    nav,
+    .services-grid,
+    .portfolio-container,
+    .default-container,
+    .who-is-container,
+    .testimonials-container,
+    .contact-container {
+        max-width: 1100px;
+    }
+}
+
+@media (max-width: 1200px) {
+    nav,
+    .services-grid,
+    .portfolio-container,
+    .default-container,
+    .who-is-container,
+    .testimonials-container,
+    .contact-container {
+        max-width: 1000px;
+    }
+    
+    nav {
+        padding: 0 30px;
+    }
+    
+    .services,
+    .portfolio,
+    .default-section,
+    .twitter,
+    .who-is,
+    .testimonials,
+    .contact {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
 
 /* Tablets (768px - 1024px) */
 @media (max-width: 1024px) {
     nav {
-        padding: 0 30px;
+        padding: 0 25px;
     }
 
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 40px;
+        gap: 45px;
+        max-width: 700px;
     }
 
     .portfolio-grid {
         grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
     }
 
-    .default-container,
-    .who-is-content,
+    .default-container {
+        gap: 60px;
+    }
+    
+    .who-is-content {
+        gap: 60px;
+    }
+    
     .contact-container {
-        gap: 50px;
+        gap: 60px;
     }
 }
 
+/* Small Tablets (768px - 900px) */
+@media (max-width: 900px) {
+    .hero-text h1 {
+        font-size: 15px;
+    }
+    
+    .default-container,
+    .who-is-content,
+    .contact-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    
+    .video-container {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .social-icons {
+        justify-content: flex-start;
+    }
+}
+
+/* Mobile Landscape and Small Tablets (600px - 768px) */
 @media (max-width: 768px) {
+    header {
+        padding: 15px 0;
+    }
+    
     nav {
         padding: 0 20px;
     }
@@ -616,6 +826,7 @@ footer {
         padding: 20px;
         gap: 20px;
         box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+        z-index: 999;
     }
 
     .nav-links.active {
@@ -627,18 +838,140 @@ footer {
     }
 
     .hero {
-        margin-top: 64px;
         min-height: 500px;
+        background-attachment: scroll;
     }
 
     .hero-text {
-        padding: 15px 30px;
+        padding: 15px 35px;
+        margin: 8px;
     }
 
     .hero-text h1 {
         font-size: 14px;
+        letter-spacing: 1.5px;
     }
 
+    .services {
+        padding: 70px 25px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+        max-width: 600px;
+    }
+    
+    .service-icon {
+        width: 65px;
+        height: 65px;
+    }
+    
+    .service-icon img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .portfolio {
+        padding: 70px 25px;
+    }
+
+    .portfolio h2 {
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+
+    .portfolio-filters {
+        gap: 25px;
+        margin-bottom: 40px;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .default-section {
+        padding: 70px 25px;
+    }
+
+    .default-content h2 {
+        font-size: 17px;
+        margin-bottom: 30px;
+    }
+
+    .default-content p {
+        font-size: 13px;
+        margin-bottom: 16px;
+    }
+
+    .twitter {
+        padding: 60px 25px;
+    }
+
+    .twitter h2 {
+        font-size: 17px;
+        margin-bottom: 30px;
+    }
+
+    .twitter-icon {
+        right: 25px;
+        top: 25px;
+        font-size: 22px;
+    }
+
+    .who-is {
+        padding: 80px 25px;
+        background-attachment: scroll;
+    }
+
+    .who-is h2 {
+        font-size: 17px;
+        margin-bottom: 35px;
+    }
+
+    .who-is-text p {
+        font-size: 12px;
+        margin-bottom: 20px;
+    }
+
+    .testimonials {
+        padding: 70px 25px;
+    }
+
+    .testimonials h2 {
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+
+    .testimonial-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .quote-icon {
+        font-size: 60px;
+        align-self: flex-end;
+    }
+
+    .contact {
+        padding: 70px 25px;
+        background-attachment: scroll;
+    }
+
+    .contact h2 {
+        font-size: 20px;
+        margin-bottom: 40px;
+    }
+
+    footer {
+        padding: 22px 25px;
+        font-size: 10px;
+    }
+}
+
+/* Mobile Portrait (480px - 600px) */
+@media (max-width: 600px) {
     .services {
         padding: 60px 20px;
     }
@@ -647,25 +980,42 @@ footer {
         grid-template-columns: 1fr;
         gap: 50px;
         max-width: 400px;
-        margin: 0 auto;
+    }
+    
+    .service-icon {
+        width: 70px;
+        height: 70px;
+    }
+    
+    .service-icon img {
+        width: 35px;
+        height: 35px;
     }
 
     .portfolio {
         padding: 60px 20px;
     }
 
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+    .portfolio h2,
+    .testimonials h2,
+    .contact h2 {
+        font-size: 19px;
+        letter-spacing: 3px;
+    }
+
+    .portfolio-filters {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .portfolio-filters button {
+        font-size: 10px;
+        padding: 6px 10px;
     }
 
     .default-section {
         padding: 60px 20px;
-    }
-
-    .default-container {
-        grid-template-columns: 1fr;
-        gap: 40px;
     }
 
     .twitter {
@@ -681,78 +1031,284 @@ footer {
         padding: 70px 20px;
     }
 
-    .who-is-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .social-icons {
-        justify-content: flex-start;
-    }
-
     .testimonials {
         padding: 60px 20px;
-    }
-
-    .testimonial-content {
-        flex-direction: column;
-        gap: 30px;
-    }
-
-    .quote-icon {
-        font-size: 50px;
     }
 
     .contact {
         padding: 60px 20px;
     }
-
-    .contact-container {
-        grid-template-columns: 1fr;
-        gap: 50px;
-    }
-
-    footer {
-        padding: 20px;
-    }
 }
 
-/* Mobile (max-width: 480px) */
+/* Small Mobile (375px - 480px) */
 @media (max-width: 480px) {
     .logo {
         font-size: 20px;
+        letter-spacing: 1.5px;
+    }
+
+    .hero {
+        min-height: 450px;
     }
 
     .hero-text {
-        padding: 12px 20px;
-        margin: 5px;
+        padding: 12px 25px;
+        margin: 6px;
     }
 
     .hero-text h1 {
         font-size: 12px;
-        letter-spacing: 1px;
+        letter-spacing: 1.2px;
     }
 
     .services {
-        padding: 50px 15px;
+        padding: 50px 18px;
+    }
+
+    .service-item h3 {
+        font-size: 13px;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+    }
+
+    .service-item p {
+        font-size: 11.5px;
+        line-height: 1.6;
     }
 
     .portfolio {
-        padding: 50px 15px;
+        padding: 50px 18px;
     }
 
-    .portfolio h2,
-    .testimonials h2 {
+    .portfolio h2 {
         font-size: 18px;
+        letter-spacing: 3px;
+        margin-bottom: 35px;
     }
 
     .portfolio-filters {
         gap: 15px;
-        flex-wrap: wrap;
     }
 
     .portfolio-filters button {
         font-size: 9px;
+        padding: 6px 8px;
+    }
+
+    .portfolio-grid {
+        gap: 12px;
+    }
+
+    .default-section {
+        padding: 50px 18px;
+    }
+
+    .default-content h2 {
+        font-size: 16px;
+        letter-spacing: 2.5px;
+        margin-bottom: 25px;
+    }
+
+    .default-content p {
+        font-size: 12px;
+        line-height: 1.8;
+        margin-bottom: 15px;
+    }
+
+    .read-more {
+        padding: 10px 30px;
+        font-size: 9px;
+    }
+
+    .twitter {
+        padding: 45px 18px;
+    }
+
+    .twitter h2 {
+        font-size: 16px;
+        letter-spacing: 3px;
+        margin-bottom: 28px;
+    }
+
+    .tweet {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .tweet-handle {
+        font-size: 12px;
+        margin-top: 18px;
+    }
+
+    .who-is {
+        padding: 60px 18px;
+    }
+
+    .who-is h2 {
+        font-size: 16px;
+        letter-spacing: 2.5px;
+        margin-bottom: 32px;
+    }
+
+    .who-is-text p {
+        font-size: 11.5px;
+        line-height: 1.8;
+        margin-bottom: 18px;
+    }
+
+    .social-icons {
+        gap: 15px;
+    }
+
+    .social-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 17px;
+    }
+
+    .testimonials {
+        padding: 50px 18px;
+    }
+
+    .testimonials h2 {
+        font-size: 18px;
+        letter-spacing: 3px;
+        margin-bottom: 35px;
+    }
+
+    .testimonial-text {
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .quote-icon {
+        font-size: 55px;
+    }
+
+    .author-more {
+        padding: 9px 25px;
+        font-size: 9px;
+        margin-top: 22px;
+    }
+
+    .contact {
+        padding: 50px 18px;
+    }
+
+    .contact h2 {
+        font-size: 18px;
+        letter-spacing: 3px;
+        margin-bottom: 38px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 14px 16px;
+        margin-bottom: 18px;
+        font-size: 11px;
+    }
+
+    .contact-form textarea {
+        height: 160px;
+    }
+
+    .submit-btn {
+        padding: 14px;
+        font-size: 10px;
+        letter-spacing: 2px;
+    }
+
+    .contact-info > p {
+        font-size: 11.5px;
+        line-height: 1.8;
+        margin-bottom: 30px;
+    }
+
+    .contact-details {
+        margin-top: 40px;
+    }
+
+    .contact-details h3 {
+        font-size: 12px;
+        margin-bottom: 18px;
+    }
+
+    .contact-details p {
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    footer {
+        padding: 20px 18px;
+        font-size: 10px;
+    }
+}
+
+/* Extra Small Mobile (320px - 375px) */
+@media (max-width: 375px) {
+    .logo {
+        font-size: 18px;
+    }
+
+    .hero {
+        min-height: 400px;
+    }
+
+    .hero-text {
+        padding: 10px 20px;
+        margin: 5px;
+    }
+
+    .hero-text h1 {
+        font-size: 11px;
+        letter-spacing: 1px;
+    }
+
+    .services {
+        padding: 45px 15px;
+    }
+
+    .service-icon {
+        width: 65px;
+        height: 65px;
+        margin-bottom: 20px;
+    }
+
+    .service-icon img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .service-item h3 {
+        font-size: 12px;
+        letter-spacing: 1.8px;
+        margin-bottom: 14px;
+    }
+
+    .service-item p {
+        font-size: 11px;
+        line-height: 1.6;
+    }
+
+    .portfolio {
+        padding: 45px 15px;
+    }
+
+    .portfolio h2,
+    .testimonials h2,
+    .contact h2 {
+        font-size: 17px;
+        letter-spacing: 2.5px;
+        margin-bottom: 30px;
+    }
+
+    .portfolio-filters {
+        gap: 12px;
+    }
+
+    .portfolio-filters button {
+        font-size: 8px;
+        padding: 5px 7px;
     }
 
     .portfolio-grid {
@@ -760,68 +1316,87 @@ footer {
     }
 
     .default-section {
-        padding: 50px 15px;
+        padding: 45px 15px;
     }
 
     .default-content h2,
     .who-is h2,
     .twitter h2 {
-        font-size: 16px;
+        font-size: 15px;
+        letter-spacing: 2px;
+    }
+
+    .default-content p,
+    .who-is-text p,
+    .contact-info > p {
+        font-size: 11px;
+        line-height: 1.7;
     }
 
     .twitter {
         padding: 40px 15px;
     }
 
+    .tweet {
+        font-size: 11px;
+    }
+
     .who-is {
-        padding: 60px 15px;
+        padding: 55px 15px;
     }
 
     .social-icons {
-        flex-wrap: wrap;
+        gap: 12px;
     }
 
     .social-icon {
-        width: 42px;
-        height: 42px;
-        font-size: 16px;
+        width: 40px;
+        height: 40px;
+        font-size: 15px;
+        border-width: 1.5px;
     }
 
     .testimonials {
-        padding: 50px 15px;
+        padding: 45px 15px;
+    }
+
+    .testimonial-text {
+        font-size: 11px;
+    }
+
+    .quote-icon {
+        font-size: 50px;
     }
 
     .contact {
-        padding: 50px 15px;
+        padding: 45px 15px;
     }
 
-    .contact h2 {
-        font-size: 18px;
-    }
-}
-
-/* Very small devices (max-width: 320px) */
-@media (max-width: 320px) {
-    .logo {
-        font-size: 18px;
+    .contact-form input,
+    .contact-form textarea {
+        padding: 13px 15px;
+        font-size: 10px;
     }
 
-    .hero-text h1 {
+    .contact-form textarea {
+        height: 140px;
+    }
+
+    .submit-btn {
+        padding: 13px;
+        font-size: 10px;
+    }
+
+    .contact-details h3 {
         font-size: 11px;
     }
 
-    .service-item h3 {
-        font-size: 12px;
+    .contact-details p {
+        font-size: 10px;
     }
 
-    .service-item p {
-        font-size: 11px;
-    }
-
-    .portfolio h2,
-    .testimonials h2,
-    .contact h2 {
-        font-size: 16px;
-        letter-spacing: 2px;
+    footer {
+        padding: 18px 15px;
+        font-size: 9px;
     }
 }
