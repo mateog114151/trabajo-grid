@@ -106,7 +106,7 @@ nav {
 .hero {
     height: 100vh;
     min-height: 600px;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('/Assets/images/Fondo.png');
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('./Assets/images/Fondo.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
